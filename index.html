@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Tic Tac Toe</title>
 </head>
@@ -12,14 +15,26 @@
 
         <h2 id="turn"></h2>
 
-        <button id="playAgain-btn">Play again</button>
+        <button id="playAgain-btn" class="pushable">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Play again</span>
+        </button>
 
         <h2 id="result"></h2>
 
         <div id="board"></div>
 
-        <button id="restart-btn">Restart</button>
-        <button id="changeNames-btn">Change Names</button>
+        <button id="restart-btn" class="pushable">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Restart</span>
+        </button>
+        <button id="changeNames-btn" class="pushable">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Change Names</span>
+        </button>
 
         <form id="start-form">
             <label id="label1" for="player1">Player 1:</label>
@@ -28,7 +43,11 @@
             <label id="label2" for="player2">Player 2:</label>
             <input type="text" name="player2" id="player2">
 
-            <button id="start-btn">Start</button>
+            <button id="start-btn" class="pushable">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">Start</span>
+            </button>
         </form>
     </div>
     <script src="main.js"></script>

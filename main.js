@@ -144,9 +144,19 @@ const ScreenController = function() {
                 const cellBtn = document.createElement("button");
                 cellBtn.textContent = cell;
                 cellBtn.dataset.column = i + 1;
+                
+                if (rowDiv.dataset.row === "1" && cellBtn.dataset.column === "1") {
+                    cellBtn.id = "top-left";
+                } else if (rowDiv.dataset.row === "1" && cellBtn.dataset.column === "3") {
+                    cellBtn.id = "top-right";
+                } else if (rowDiv.dataset.row === "3" && cellBtn.dataset.column === "1") {
+                    cellBtn.id = "bottom-left";
+                } else if (rowDiv.dataset.row === "3" && cellBtn.dataset.column === "3") {
+                    cellBtn.id = "bottom-right";
+                }
+
                 cellBtn.addEventListener("click", () => {
                     if (boardInst.getSelectedCell() !== undefined && cellBtn.dataset.column === boardInst.getSelectedCell().dataset.column && rowDiv.dataset.row === boardInst.getSelectedCell().parentNode.parentNode.dataset.row || cellBtn.textContent !== "") {
-                        // alert("That cell is already selected!!!!")
                         return;
                     }
                     
@@ -198,39 +208,32 @@ const ScreenController = function() {
     }
 
     const showPlayAgainButton = () => {
-        // resultH2.parentNode.insertBefore(playAgainBtn, resultH2.nextSibling);
         playAgainBtn.style.display = "block";
     }
 
     const removePlayAgainButton = () => {
-        // containerDiv.removeChild(playAgainBtn);
         playAgainBtn.style.display = "none";
     }
 
     const showRestartBtn = () => {
-        // containerDiv.appendChild(restartBtn);
         restartBtn.style.display = "block";
     }
 
     const removeRestartBtn = () => {
-        // containerDiv.removeChild(restartBtn);
         restartBtn.style.display = "none";
     }
 
     const showChangeNamesBtn = () => {
-        // containerDiv.appendChild(changeNamesBtn);
         changeNamesBtn.style.display = "block";
     }
 
     const removeChangeNamesBtn = () => {
-        // containerDiv.removeChild(changeNamesBtn);
         changeNamesBtn.style.display = "none";
     }
 
     playAgainBtn.addEventListener("click", () => {
         resultH2.textContent = "";
-        game.playGame()
-        // containerDiv.removeChild(playAgainBtn);
+        game.playGame();
         removePlayAgainButton();
         showRestartBtn();
         gameLayout();
