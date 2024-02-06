@@ -1,0 +1,115 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 6rem;
+    grid-area: header;
+}
+
+.container {
+    display: grid;
+    /* grid-template-areas: 
+    ". header header ."
+    ". turn turn ."
+    ". result result ."
+    ". playAgain playAgain ."
+    ". board board ."
+    "restart restart changeNames changeNames"; */
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+}
+
+#board {
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    display: grid;
+    display: none;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-area: board;
+}
+
+#board div {
+    border: 1px solid black;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#board button {
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 6rem;
+}
+
+#turn, #result {
+    font-size: 3rem;
+}
+
+#result {
+    grid-area: result;
+}
+
+#turn {
+    grid-area: turn;
+}
+
+#restart-btn {
+    grid-area: restart;
+    justify-self: center;
+    display: none;
+}
+
+#start-btn {
+    grid-area: startBtn;
+    padding: 8px;
+    width: 190px;
+    margin-left: 140px;
+}
+
+#changeNames-btn {
+    grid-area: changeNames;
+    justify-self: center;
+    display: none;
+}
+
+#playAgain-btn {
+    display: none;
+    grid-area: playAgain;
+}
+
+#start-form {
+    grid-area: form;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 0.4fr 1fr;
+    grid-template-areas: 
+    "label1 input1 label2 input2"
+    ". . . ."
+    ". startBtn startBtn .";
+    row-gap: 20px;
+    align-items: center;
+}
+
+#label1 {
+    grid-area: label1;
+    justify-self: end;
+}
+
+#label2 {
+    grid-area: label2;
+    justify-self: end;
+}
+
+#player1 {
+    grid-area: input1;
+}
+
+#player2 {
+    grid-area: input2;
+}
